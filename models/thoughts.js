@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const reactionSchema = require('./reactions');
 
 
 const thoughtSchema = new Schema(
@@ -6,7 +7,7 @@ const thoughtSchema = new Schema(
       thoughtText: { type: String, required: true, max_length: 280},
       createdAt: { type: Date, default: Date.now },
       username: {type: String,required: true},
-      reaction:  [{ type: Schema.Types.ObjectId, ref: 'reaction' }],
+      reaction:  [reactionSchema],
        
     },
 
@@ -19,7 +20,7 @@ const thoughtSchema = new Schema(
     }
   );
   // Create a virtual called reactionCount that retrieves the length of the thought's react
-  postSchema.virtual('reactionCount').get(function () {
+  thoughtSchema.virtual('reactionCount').get(function () {
     return this.reaction.length;
   });
   

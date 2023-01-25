@@ -1,7 +1,7 @@
 const express = require('express');
 const db = require('./config/connection');
 const {User} = require('./models');
-
+const routes = require('./routes');
 
 
 
@@ -12,7 +12,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.use(routes);
 
   app.get('/all-users', (req, res) => {
     // Using model to find all users
