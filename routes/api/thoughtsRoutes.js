@@ -11,18 +11,23 @@ const{
 
  } = require ('../../controllers/thoughtController')
 
-// /api/thought
+// /api/thoughts
 router.route('/')
 .get(getThoughts)
 .post(createThought);
 
-// /api/thought/thought:id
+// /api/thoughts/thought:id
 router
   .route('/:thoughtId')
   .get(getSingleThought)
   .put(updateThought)
   .delete(deleteThought)
-  .post(addReaction)
+  .post(addReaction);
+  
+
+  router
+  .route('/:thoughtId/:reactionId')
+  
   .delete(deleteReaction);
 
 module.exports = router;

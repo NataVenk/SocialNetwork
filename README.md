@@ -20,6 +20,9 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ## Mock-up
 
 Link to the video
+[![Watch the video](https://youtu.be/5GBGnQbgW4U)](https://youtu.be/5GBGnQbgW4U)
+
+
 
    <img src = "./assets/images/frontpage.png" />
 
